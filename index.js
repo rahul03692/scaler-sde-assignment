@@ -64,7 +64,7 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  if((sTimeArray[0] == curentHour && sTimeArray[1] < currentMinutes) || (eTimeArray[0] == currentHour && eTimeArray[1] < currentMinutes)){
+  if((sTimeArray[0] == currentHour && sTimeArray[1] < currentMinutes) || (eTimeArray[0] == currentHour && eTimeArray[1] < currentMinutes)){
     alert("please check the time");
     return;
   }
