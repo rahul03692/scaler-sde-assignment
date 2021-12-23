@@ -42,7 +42,7 @@ form.addEventListener("submit", (event) => {
   const currentHour=dateObj.getHours();
   const currentMinutes=dateObj.getMinutes();
   const myArray = date.split("-");
-  const sTimeArray=sTime.slit(":");
+  const sTimeArray=sTime.split(":");
   const eTimeArray=eTime.split(":");
   console.log(currentHour, currentMinutes);
 
