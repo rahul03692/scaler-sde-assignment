@@ -39,24 +39,36 @@ form.addEventListener("submit", (event) => {
   const currentYear = dateObj.getFullYear();
   const today = dateObj.getDate();
   const currentMonth = dateObj.getMonth() + 1;
+  const currentHour=dateObj.getHours();
+  const currentMinutes=dateObj.getMinutes();
   const myArray = date.split("-");
-
-  console.log(myArray,today,currentMonth,currentYear);
+  const sTimeArray=sTime.slit(":");
+  const eTimeArray=eTime.split(":");
+  console.log(currentHour, currentMinutes);
 
   myArray[0]=parseInt(myArray[0]);
   myArray[1]=parseInt(myArray[1]);
   myArray[2]=parseInt(myArray[2]);
+  sTimeArray[0]=parseInt(sTimeArray[0]);
+  sTimeArray[1]=parseInt(sTimeArray[1]);
+  eTimeArray[0]=parseInt(eTimeArray[0]);
+  eTimeArray[1]=parseInt(eTimeArray[1]);
 
   if(myArray[2]<today || myArray[1]<currentMonth || myArray[0]<currentYear){
     alert("please select correct date");
     return;
   }
   
-  if(sTime > eTime){
+  if(sTime > eTime || sTimeArray[0] < currentHour || eTimeArray[0] < currentHour){
     alert("please select correct time");
     return;
   }
-  
+
+  if((sTimeArray[0] == curentHour && sTimeArray[1] < currentMinutes) || (eTimeArray[0] == currentHour && eTimeArray[1] < currentMinutes)){
+    alert("please check the time");
+    return;
+  }
+
 
 
   db.collection("schedules").add({
