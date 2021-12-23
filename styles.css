@@ -1,0 +1,19 @@
+.main{
+    margin: 40px;
+}
+
+.scheduleList{
+    list-style-type: none;
+}
+
+li{
+    margin: 10px;
+}
+
+label,input{
+    margin: 10px;
+}
+
+h2{
+    padding: 10px;
+}
